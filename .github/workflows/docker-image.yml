@@ -15,9 +15,13 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         GITHUB_SHA:  ${{github.sha}}    
-        TAG_DATE: $(date +%s)
+        TAG_DATE: ${{ steps.date.outputs.date }}
         IMAGE_NAME: serfanrud/go-crud-food
     steps:
+    - name: get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y%m%d')"
+      
     - uses: actions/checkout@v3
     - name: docker-login
       shell: bash
