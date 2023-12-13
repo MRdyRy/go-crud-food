@@ -1,5 +1,6 @@
 # Simple Crud :
 [![Build & Test](https://github.com/MRdyRy/go-crud-food/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/MRdyRy/go-crud-food/actions/workflows/pipeline.yml)
+[![Build Docker and Push Registry](https://github.com/MRdyRy/go-crud-food/actions/workflows/docker-image.yml/badge.svg)](https://github.com/MRdyRy/go-crud-food/actions/workflows/docker-image.yml)
 - <a href="https://go.dev/">go</a> 
 - <a href="https://gin-gonic.com/">gin</a>
 - <a href="https://gorm.io/index.html">gorm</a>
