@@ -21,11 +21,14 @@ jobs:
         IMAGE_NAME: serfanrud/go-crud-food
         TAG_VERSION: latest
         GITHUB_SHA:  ${{github.sha}}
+        TAG_DATE: $(date +%s)
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           
     - name: build docker image
-      run: docker build . --file dockerfile --tag serfanrud/go-crud-food:$(date +%s)
+      run: |
+        docker build . --file dockerfile --tag serfanrud/go-crud-food:${TAG_DATE}
 
     - name: docker push to registry
-      run: docker push serfanrud/go-crud-food:$(date +%s)
+      run: |
+        docker push serfanrud/go-crud-food:${TAG_DATE}
