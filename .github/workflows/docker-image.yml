@@ -27,8 +27,8 @@ jobs:
           
     - name: build docker image
       run: |
-        docker build . --file dockerfile --tag serfanrud/go-crud-food:${{env.TAG_DATE}}
+        docker build . --file dockerfile --tag serfanrud/go-crud-food:$TAG_DATE
 
     - name: docker push to registry
       run: |
-        docker push serfanrud/go-crud-food:${{env.TAG_DATE}}
+        docker push serfanrud/go-crud-food:$TAG_DATE
