@@ -5,8 +5,9 @@ networks:
     driver: bridge
 
 services:
-  broker-service:
+  go-crud-food:
     container_name: go-crud-food
+    hostname: go-crud-food
     build:
       dockerfile: dockerfile
     restart: always
