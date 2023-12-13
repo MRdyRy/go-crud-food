@@ -42,9 +42,9 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           
       - name: build docker image
-        run: docker build . --file dockerfile --tag $IMAGE_NAME:$TAG_VERSION
+        run: docker build . --file dockerfile --tag serfanrud/go-crud-food:latest
 
       - name: docker push to hub
-        run: docker push $IMAGE_NAME:$TAG_VERSION
+        run: docker push serfanrud/go-crud-food:latest
         
   
