@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  gonet:
+    driver: bridge
+
+services:
+  broker-service:
+    container_name: go-crud-food
+    build:
+      dockerfile: dockerfile
+    restart: always
+    ports:
+      - "8080:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - gonet
