@@ -37,3 +37,7 @@ uint = Minimal int32<br/>
 
 # to compile
 > go build
+
+
+# support
+<p><a href="https://www.buymeacoffee.com/rudytoryan"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="35" width="140" alt="rudytoryan" /></a></p><br><br>
