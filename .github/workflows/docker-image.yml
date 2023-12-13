@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: docker-login
+      shell: bash
       env:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
@@ -22,13 +23,11 @@ jobs:
         TAG_VERSION: latest
         GITHUB_SHA:  ${{github.sha}}
         TAG_DATE: $(date +%s)
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        IMAGE_FULL_NAME: $IMAGE_NAME:$TAG_DATE
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           
     - name: build docker image
-      run: |
-        docker build . --file dockerfile --tag serfanrud/go-crud-food:$TAG_DATE
+      run: docker build . --file dockerfile --tag $IMAGE_FULL_NAME
 
     - name: docker push to registry
-      run: |
-        docker push serfanrud/go-crud-food:$TAG_DATE
+      run: docker push $IMAGE_FULL_NAME
