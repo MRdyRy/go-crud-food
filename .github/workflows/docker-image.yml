@@ -22,7 +22,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         GITHUB_SHA:  ${{github.sha}}    
-        TAG_DATE: ${{ steps.date.outputs.date }}
+        TAG_DATE: ${{ get-current-date.steps.date.outputs.date }}
         IMAGE_NAME: serfanrud/go-crud-food
     steps:
     - uses: actions/checkout@v3
