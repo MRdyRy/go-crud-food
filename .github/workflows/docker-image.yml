@@ -1,0 +1,31 @@
+name: Build Docker and Push Registry
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker-login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        IMAGE_NAME: serfanrud/go-crud-food
+        TAG_VERSION: latest
+        GITHUB_SHA:  ${{github.sha}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+          
+    - name: build docker image
+      run: docker build . --file dockerfile --tag serfanrud/go-crud-food:$(date +%s)
+
+    - name: docker push to registry
+      run: docker push serfanrud/go-crud-food:$(date +%s)
