@@ -5,6 +5,25 @@ networks:
     driver: bridge
 
 services:
+  db:
+    container_name: db
+    image: postgres:14.1-alpine
+    hostname: db
+    restart: on-failure
+    command: postgres -c 'max_connections=3'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#    env_file:
+#      - .env
+    networks:
+      - gonet
+      
   go-crud-food:
     container_name: go-crud-food
     hostname: go-crud-food
@@ -16,5 +35,7 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    depends_on:
+      - db
     networks:
       - gonet
