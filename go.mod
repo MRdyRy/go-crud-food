@@ -1,4 +1,4 @@
-module go-crud-food
+module github.com/MRdyRy/go-crud-food
 
 go 1.21.1
 
