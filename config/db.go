@@ -2,7 +2,8 @@ package config
 
 import (
 	"fmt"
-	"go-crud-food/helper"
+
+	"github.com/MRdyRy/go-crud-food/helper"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

@@ -1,10 +1,11 @@
 package controller
 
 import (
-	"go-crud-food/helper"
-	"go-crud-food/model"
-	"go-crud-food/service"
 	"net/http"
+
+	"github.com/MRdyRy/go-crud-food/helper"
+	"github.com/MRdyRy/go-crud-food/model"
+	"github.com/MRdyRy/go-crud-food/service"
 
 	"github.com/gin-gonic/gin"
 )

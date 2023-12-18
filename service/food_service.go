@@ -1,6 +1,6 @@
 package service
 
-import "go-crud-food/model"
+import "github.com/MRdyRy/go-crud-food/model"
 
 type FoodService interface {
 	Create(f model.Request)

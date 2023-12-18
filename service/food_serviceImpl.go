@@ -1,9 +1,9 @@
 package service
 
 import (
-	"go-crud-food/helper"
-	"go-crud-food/model"
-	"go-crud-food/repository"
+	"github.com/MRdyRy/go-crud-food/helper"
+	"github.com/MRdyRy/go-crud-food/model"
+	"github.com/MRdyRy/go-crud-food/repository"
 
 	"github.com/go-playground/validator/v10"
 )

@@ -1,15 +1,16 @@
 package main
 
 import (
-	"go-crud-food/config"
-	"go-crud-food/controller"
-	"go-crud-food/helper"
-	"go-crud-food/model"
-	"go-crud-food/repository"
-	"go-crud-food/router"
-	"go-crud-food/service"
 	"net/http"
 	"time"
+
+	"github.com/MRdyRy/go-crud-food/config"
+	"github.com/MRdyRy/go-crud-food/controller"
+	"github.com/MRdyRy/go-crud-food/helper"
+	"github.com/MRdyRy/go-crud-food/model"
+	"github.com/MRdyRy/go-crud-food/repository"
+	"github.com/MRdyRy/go-crud-food/router"
+	"github.com/MRdyRy/go-crud-food/service"
 
 	"github.com/go-playground/validator/v10"
 )

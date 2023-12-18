@@ -1,8 +1,9 @@
 package router
 
 import (
-	"go-crud-food/controller"
 	"net/http"
+
+	"github.com/MRdyRy/go-crud-food/controller"
 
 	"github.com/gin-gonic/gin"
 )

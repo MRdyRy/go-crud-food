@@ -2,8 +2,9 @@ package repository
 
 import (
 	"errors"
-	"go-crud-food/helper"
-	"go-crud-food/model"
+
+	"github.com/MRdyRy/go-crud-food/helper"
+	"github.com/MRdyRy/go-crud-food/model"
 
 	"gorm.io/gorm"
 )

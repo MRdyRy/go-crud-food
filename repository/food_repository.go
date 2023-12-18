@@ -1,6 +1,6 @@
 package repository
 
-import "go-crud-food/model"
+import "github.com/MRdyRy/go-crud-food/model"
 
 type FoodRepository interface {
 	Save(f model.Food)
